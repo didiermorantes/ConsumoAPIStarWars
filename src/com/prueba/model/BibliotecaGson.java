@@ -20,6 +20,12 @@ public class BibliotecaGson {
         return respuestaTitulo;
     }
 
+    public Pelicula procesarJsonStarWars(String elJson){
+        Gson gson = new Gson();
+        Pelicula respuestaPelicula = gson.fromJson(elJson, Pelicula.class );
+        return respuestaPelicula;
+    }
+
     public TituloRecord procesarJsonRecord(String elJson){
         Gson gson = new Gson();
         TituloRecord respuestaTituloRecord = gson.fromJson(elJson, TituloRecord.class );

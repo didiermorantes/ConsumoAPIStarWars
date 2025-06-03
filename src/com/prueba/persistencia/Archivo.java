@@ -1,5 +1,5 @@
 package com.prueba.persistencia;
-import com.prueba.model.Titulo;
+import com.prueba.model.Pelicula;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -22,7 +22,7 @@ public class Archivo {
     }
 
 
-    public String guardarDato(Titulo unTitulo){
+    public String guardarDato(Pelicula unTitulo){
         boolean resultado = false;
         String mensaje = "";
         this.dato = unTitulo.toString();

@@ -2,34 +2,75 @@ package com.prueba.model;
 
 import com.prueba.excepcion.ExcepcionPersonalizada;
 
-public class Titulo {
+public class Pelicula {
 
-    private String nombre;
-    private String lanzamiento ="";
-    private String duracion = "";
-    private String genero = "";
-    private String director ="";
-    private String trama ="";
-    private String pais = "";
-    private String clavesNoUsadas = "";
+    private String title;
+    private int episode_id;
+    private String opening_crawl;
+    private String director;
+    private String producer;
+    private String release_date ="";
 
 
-    public Titulo(){
-        this.setNombre("");
-        this.setLanzamiento("");
-        this.setDuracion("");
-        this.setGenero("");
+
+    public Pelicula(){
+        this.setTitle("");
+        this.setEpisode_id(0);
+        this.setOpening_crawl("");
         this.setDirector("");
-        this.setTrama("");
-        this.setPais("");
+        this.setProducer("");
+        this.setRelease_date("");
 
     }
+
+    public void setTitle(String title){
+        this.title = title;
+    }
+    public String getTitle(){
+        return this.title;
+    }
+
+    public void setEpisode_id(int episode_id){
+        this.episode_id = episode_id;
+    }
+    public int getEpisode_id(){
+        return this.episode_id;
+    }
+
+    public void setOpening_crawl(String opening_crawl){ this.opening_crawl = opening_crawl;}
+    public String getOpening_crawl(){return this.opening_crawl;}
+
+    public void setDirector(String director){ this.director = director;}
+    public String getDirector(){return this.director;}
+
+    public void setProducer(String producer){ this.producer = producer;}
+    public String getProducer(){return this.producer;}
+
+    public void setRelease_date(String release_date){ this.release_date = release_date;}
+    public String getRelease_date(){return this.release_date;}
+
+
+    // metodo toString para mostrar informacion del objeto imprimiendo directamente el objeto sin invocar algun metodo
+    // el metodo ya existe en el objeto asi que se tiene que sobre escribir
+    @Override
+    public String toString(){
+        return  "\noooooooooooooooooooooooooooooooooooooooo\n"+
+                "\n Salida metodo toString() clase Pelicula "+
+                "\n Titulo de la pelicula: "+this.getTitle()+
+                "\n ID del episodio: "+this.getEpisode_id()+
+                "\n Opening de la pelicula: "+this.getOpening_crawl()+
+                "\n Director de la pelicula: "+this.getDirector()+
+                "\n Productor de la pelicula "+this.getProducer()+
+                "\n Fecha de lanzamiento de la pelicula: "+this.getRelease_date()+
+                "\n oooooooooooooooooooooooooooooooooooooooo\n ";
+    }// fin toString
 
 
     // creamos un constructor que recibe como argumento un objeto de clase TituloRecord
     // el record ya posee integrados los getters y los setters, y se pueden obtener las propiedades mediante nombreObjeto.nombrePropiedad()
     // ejemplo objetoTituloRecord.Title();
-    public Titulo(TituloRecord objetoTituloRecord){
+  /*
+    public Pelicula(TituloRecord objetoTituloRecord){
         this.setNombre(objetoTituloRecord.Title());
         this.setLanzamiento(objetoTituloRecord.Released());
         // lanzamos la excepcion personalizada cuando  Runtime traiga N/A. Probar con el titulo bichos
@@ -45,37 +86,7 @@ public class Titulo {
     }
 
 
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
-    public String getNombre(){
-        return this.nombre;
-    }
 
-    public void setLanzamiento(String lanzamiento){
-        this.lanzamiento = lanzamiento;
-    }
-    public String getLanzamiento(){
-        return this.lanzamiento;
-    }
-
-    public void setDuracion(String duracion){ this.duracion = duracion;}
-    public String getDuracion(){return this.duracion;}
-
-    public void setGenero(String genero){ this.genero = genero;}
-    public String getGenero(){return this.genero;}
-
-    public void setDirector(String director){ this.director = director;}
-    public String getDirector(){return this.director;}
-
-    public void setTrama(String trama){ this.trama = trama;}
-    public String getTrama(){return this.trama;}
-
-    public void setPais(String pais){ this.pais = pais;}
-    public String getPais(){return this.pais;}
-
-    public void setClavesNoUsadas(String clavesNoUsadas){ this.clavesNoUsadas = clavesNoUsadas;}
-    public String getClavesNoUsadas(){return this.clavesNoUsadas;}
 
 
     public void extraerInformacionArreglos(String[] arrClaves, String[] arrValores){
@@ -133,21 +144,10 @@ public class Titulo {
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%");
     }// fin listarInformacion
 
-    // metodo toString para mostrar informacion del objeto imprimiendo directamente el objeto sin invocar algun metodo
-    // el metodo ya existe en el objeto asi que se tiene que sobre escribir
-    @Override
-    public String toString(){
-        return  "oooooooooooooooooooooooooooooooooooooooo"+
-                "\n Salida metodo toString() clase Titulo "+
-                "\n Titulo de la pelicula: "+this.getNombre()+
-                "\n Fecha de lanzamiento de la pelicula: "+this.getLanzamiento()+
-                "\n Duracion de la pelicula: "+this.getDuracion()+
-                "\n Genero de la pelicula: "+this.getGenero()+
-                "\n Director de lanzamiento de la pelicula: "+this.getDirector()+
-                "\n Trama de la pelicula: "+this.getTrama()+
-                "\n Pais de la pelicula: "+this.getPais()+
-                "\n oooooooooooooooooooooooooooooooooooooooo";
-    }// fin toString
+
+
+
+    */
 
 
 
