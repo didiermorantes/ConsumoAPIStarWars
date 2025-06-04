@@ -3,9 +3,7 @@ package com.prueba.model;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.prueba.model.TituloGson;
 
-import java.util.ArrayList;
 
 import java.util.List;
 
@@ -55,6 +53,18 @@ public class BibliotecaGson {
                                     .setPrettyPrinting()
                                     .create();
         String elJson = gson.toJson(laLista );
+        return elJson;
+    }
+
+    public String convertirAJsonObjeto(Pelicula elObjetoPelicula){
+        // se utiliza el patron Builder para implementar la politica en el objeto gson que permite que las propiedades que vengan de la API se almacenen sin distinguir las mayusculas
+        // se utiliza la politica para que los nombre comiencen en minuscula y sean entendidos por la biblioteca
+        // se utiliza la mejora prettyPrinting para que l json generado se vea organizado y bonito
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .setPrettyPrinting()
+                .create();
+        String elJson = gson.toJson(elObjetoPelicula);
         return elJson;
     }
 }

@@ -1,5 +1,6 @@
 package com.prueba.solicitud;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -76,7 +77,7 @@ public class SolicitudStarWars {
         return this.url;
     }
 
-    public int buscarPelicula(){
+    public int buscarPelicula() {
         Scanner atrapar = new Scanner(System.in);
         int numeroPelicula = 0;
         String numeroPeliculaString = "";
@@ -133,7 +134,7 @@ public class SolicitudStarWars {
         }
     }
 
-    public void consumirEndpointResponse(){
+    public void consumirEndpointResponse() throws IOException, InterruptedException{
         try{
             HttpClient client = HttpClient.newHttpClient();
 
@@ -150,6 +151,9 @@ public class SolicitudStarWars {
 
 
 
+        }
+        catch(IOException | InterruptedException e){
+            throw new RuntimeException(e);
         }
         catch(Exception e ){
             System.out.println("Error consumiendo Endpoint tipo Response. Tipo Error: "+ e.getMessage());

@@ -81,6 +81,35 @@ public class Archivo {
 
     }
 
+    public String guardarJsonObjeto(Pelicula elObjetoPelicula){
+        boolean resultado = false;
+        String mensaje = "";
+        this.json = elObjetoPelicula.toString();
+        System.out.println("Guardando en archivo json la siguiente informacion: \n"+this.json);
+        try{
+            FileWriter objetoWriter = new FileWriter(elObjetoPelicula.getTitle()+".json");
+            objetoWriter.write(this.json);
+            objetoWriter.close();
+            System.out.println("Persistencia json aplicada existosamente");
+            resultado = true;
+        }
+        catch(Exception e){
+            System.out.println("Ocurrio una excepcion guardando en archivo json: "+e.getMessage());
+        }
+        finally {
+            System.out.println("Proceso de persistencia json finalizado");
+        }
+
+        if(resultado== true){
+            mensaje= "Información Almacenada exitosamente en el archivo json";
+        }
+        else{
+            mensaje="No se almacenó información en el archivo json";
+        }
+        return mensaje;
+
+    }
+
     public String leerDatoScanner(){
         String datoLeido = "";
         String path= "persistenciaPelicula.txt";
